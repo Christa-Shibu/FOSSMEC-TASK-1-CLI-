@@ -54,7 +54,6 @@ def instructions():
 print("\033[38;2;255;176;0m===TIC TAC TOE===\033[0m")
 print(" ")
 instructions()
-print("LOADING......")
 print("\033[38;2;255;176;0m Type -h to display instructions between the game\033[0m")
 print(" ")
 print("\033[38;2;0;255;127mPress ENTER to play\033[0m")
