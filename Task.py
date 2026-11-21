@@ -29,7 +29,7 @@ def win():
     return False
 def instructions():
     print("\033[38;2;0;255;127mInsrtuctions to play:\n1.This is a two player game.\n2.Player 1 uses X and player 2 uses O.\n3.Player 1 gets the first turn.\033[0m")
-    print("\033[38;2;0;255;127m4.The game board consists of 3 rows and 3 columns.\n4.Enter position (eg:a1,a2,c3...) as per sample table to place your symbol.\033[0m")
+    print("\033[38;2;0;255;127m4.The game board consists of 3 rows and 3 columns.\n5.Enter position (eg:a1,a2,c3...) as per sample table to place your symbol.\033[0m")
     board=['a1','a2','a3'],['b1','b2','b3'],['c1','c2','c3']
     print("\033[38;2;0;245;212m-\033[0m"*7)
     for i in board:
