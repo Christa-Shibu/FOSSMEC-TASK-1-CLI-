@@ -61,7 +61,7 @@ while True:
         display()
         continue
     elif pos in occupied:
-        print("\033[38;2;255;65;65mOOPS! The coloumn is already occupied\033[0m ")
+        print("\033[38;2;255;65;65mOOPS! The column is already occupied\033[0m ")
         display()
         continue
     elif pos not in {'a1','a2','a3','b1','b2','b3','c1','c2','c3'}:
