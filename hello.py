@@ -1,0 +1,11 @@
+print("10"+"20")
+print(10+20)
+print("python"+"3")
+a=7
+b=9
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a//b)
+print(a**b)

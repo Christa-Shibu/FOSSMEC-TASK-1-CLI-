@@ -1,6 +1,6 @@
 import os
-import time
 board=[' ' ,' ',' '],[' ',' ',' '],[' ',' ',' ']
+win_pairs=(((0,0),(0,1),(0,2)),((1,0),(1,1),(1,2)),((2,0),(2,1),(2,2)),((0,0),(1,0),(2,0)),((0,1),(1,1),(2,1)),((0,2),(1,2),(2,2)),((0,0),(1,1),(2,2)),((0,2),(1,1),(2,0)))
 def sample():
     board=['a1','a2','a3'],['b1','b2','b3'],['c1','c2','c3']
     for i in board:
@@ -23,25 +23,12 @@ def mark(pos,player):
     j=int(pos[1])-1
     board[i][j]=player
 def win():
-    if board[0][0]==board[0][1]==board[0][2]!=" ":
-        return True
-    if board[1][0]==board[1][1]==board[1][2]!=" ":
-        return True
-    if board[2][0]==board[2][1]==board[2][2]!=" ":
-        return True
-    if board[0][0]==board[1][0]==board[2][0]!=" ":
-        return True
-    if board[0][1]==board[1][1]==board[2][1]!=" ":
-        return True
-    if board[0][2]==board[1][2]==board[2][2]!=" ":
-        return True
-    if board[0][0]==board[1][1]==board[2][2]!=" ":
-        return True
-    if board[0][2]==board[1][1]==board[2][0]!=" ":
-        return True
+    for (r1,c1),(r2,c2),(r3,c3) in win_pairs:
+        if board[r1][c1]==board[r2][c2]==board[r3][c3]!=" ":
+            return True
     return False
 def instructions():
-    print("\033[38;2;0;255;127mInsrtuctions to play:\n1.This is a two player game.\n2.Player1 uses X and player 2 uses O.\n3.Player 1 gets the first turn.\033[0m")
+    print("\033[38;2;0;255;127mInsrtuctions to play:\n1.This is a two player game.\n2.Player 1 uses X and player 2 uses O.\n3.Player 1 gets the first turn.\033[0m")
     print("\033[38;2;0;255;127m4.The game board consists of 3 rows and 3 colouns.\n4.Enter position (eg:a1,a2,c3...) as per sample table to place your symbol.\033[0m")
     board=['a1','a2','a3'],['b1','b2','b3'],['c1','c2','c3']
     print("\033[38;2;0;245;212m-\033[0m"*7)
@@ -78,7 +65,7 @@ while True:
         display()
         continue
     elif pos not in {'a1','a2','a3','b1','b2','b3','c1','c2','c3'}:
-        print("\033[38;2;255;65;65mInvalid choice,Try again\033[0m")
+        print("\033[38;2;255;65;65mInvalid choice,Try again!\033[0m")
         display()
         continue
     occupied.append(pos)
@@ -88,7 +75,7 @@ while True:
         print("\033[38;2;255;85;85mPlayer\033[0m",player ,"\033[38;2;255;85;85mwon!\033[0m")
         exit()
     if i==9:
-        print(f"\033[38;2;255;176;0mOH!It's a Draw\033[0m")
+        print(f"\033[38;2;255;176;0mOh!It's a Draw\033[0m")
         exit()
     i=i+1
 
